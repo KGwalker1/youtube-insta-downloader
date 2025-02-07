@@ -1,0 +1,17 @@
+# Use an official Nginx image to serve static files
+FROM nginx:alpine
+
+# Set the working directory inside the container
+WORKDIR /usr/share/nginx/html
+
+# Remove default nginx website
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copy the frontend files to the Nginx directory
+COPY . .
+
+# Expose port 80 (default for HTTP traffic)
+EXPOSE 80
+
+# Nginx will automatically start serving the files
+CMD ["nginx", "-g", "daemon off;"]

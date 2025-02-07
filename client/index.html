@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Downloader</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Video Downloader</h1>
+
+      <!-- YouTube Downloader -->
+      <section id="youtube-downloader">
+        <h2>YouTube Downloader</h2>
+        <form id="youtubeForm">
+          <input
+            id="youtubeUrl"
+            type="text"
+            placeholder="Enter YouTube URL"
+            required
+          />
+          <button type="submit">Download</button>
+        </form>
+        <p id="youtubeMessage"></p>
+      </section>
+
+      <!-- Instagram Downloader -->
+      <section id="instagram-downloader">
+        <h2>Instagram Downloader</h2>
+        <form id="instaForm">
+          <input
+            id="instaUrl"
+            type="text"
+            placeholder="Enter Instagram URL"
+            required
+          />
+          <button type="submit">Download</button>
+        </form>
+        <p id="instaMessage"></p>
+      </section>
+    </div>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  python-backend:
+    build:
+      context: .
+      dockerfile: server/dockerfile.backend
+    container_name: python-backend
+    volumes:
+      - ./server/downloads:/app/downloads # Map the downloads directory from host to container
+    ports:
+      - "5000:5000" # Expose backend on port 5000
+    environment:
+      - PYTHONUNBUFFERED=1 # Ensures Python output is shown in Docker logs
+    command: node app.js # Start the backend server
+
+  frontend:
+    build:
+      context: .
+      dockerfile: client/dockerfile.frontend
+    container_name: frontend
+    ports:
+      - "5500:80" # Expose frontend on port 5500
+    volumes:
+      - ./client:/usr/share/nginx/html # Serve static files from the client folder
+      - ./server/downloads:/usr/share/nginx/html/downloads # Allow frontend to access the downloads directory
+    depends_on:
+      - python-backend
+
+networks:
+  default:
+    driver: bridge
