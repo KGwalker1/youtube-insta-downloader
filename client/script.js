@@ -8,7 +8,7 @@ document.getElementById("youtubeForm").addEventListener("submit", async (e) => {
   message.textContent = "Downloading...";
 
   try {
-    const response = await fetch("http://localhost:3001/api/youtube-download", {
+    const response = await fetch("http://localhost:3002/api/youtube-download", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -33,7 +33,7 @@ document.getElementById("instaForm").addEventListener("submit", async (e) => {
 
   try {
     const response = await fetch(
-      "http://localhost:3001/api/instagram-download",
+      "http://localhost:3002/api/instagram-download",
       {
         method: "POST",
         headers: {

@@ -23,7 +23,7 @@ COPY server/ ./
 RUN mkdir -p /app/downloads
 
 # Expose the backend port
-EXPOSE 5000
+EXPOSE 3002
 
 # Start the Node.js server
 CMD ["node", "app.js"]

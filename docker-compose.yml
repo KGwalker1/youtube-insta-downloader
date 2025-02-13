@@ -9,7 +9,7 @@ services:
     volumes:
       - ./server/downloads:/app/downloads # Map the downloads directory from host to container
     ports:
-      - "5000:5000" # Expose backend on port 5000
+      - "3002:3002" # Expose backend on port 5000
     environment:
       - PYTHONUNBUFFERED=1 # Ensures Python output is shown in Docker logs
     command: node app.js # Start the backend server
